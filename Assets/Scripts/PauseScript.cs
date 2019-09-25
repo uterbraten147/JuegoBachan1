@@ -20,7 +20,7 @@ public class PauseScript : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetButtonDown("Pause"))
+        if(Input.GetButtonDown("Button_Back") || Input.GetKeyDown(KeyCode.Escape))
         {
             if(!IsPaused)
             {
