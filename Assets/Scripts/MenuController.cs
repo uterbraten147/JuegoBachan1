@@ -63,8 +63,8 @@ public class MenuController : MonoBehaviour
 
     public void SalirJuego()
     {
-       
 
+        Application.Quit();
 
     }
 
