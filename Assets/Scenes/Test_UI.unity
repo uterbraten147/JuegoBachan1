@@ -153,8 +153,8 @@ MonoBehaviour:
   winImage: {fileID: 1322205299}
   LoseImage: {fileID: 1886397948}
   GameOverPanel: {fileID: 2094492969}
-  WinBool: 0
-  GameOver: 0
+  WinBool: 1
+  GameOver: 1
 --- !u!4 &104415020
 Transform:
   m_ObjectHideFlags: 0
