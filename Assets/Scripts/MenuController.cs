@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MenuController : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public GameObject MainPanel, PlayPanel, CreditsPanel, OpcionesPanel;
-    public GameObject Cam;
+    public GameObject Cam, firstMain, firstPlay, firstCred, firstOP;
     float giro;
     void Start()
     {
@@ -38,6 +39,8 @@ public class MenuController : MonoBehaviour
         CreditsPanel.SetActive(false);
         OpcionesPanel.SetActive(false);
 
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(firstPlay,null);
+
 
     }
 
@@ -48,6 +51,8 @@ public class MenuController : MonoBehaviour
         CreditsPanel.SetActive(false);
         OpcionesPanel.SetActive(true);
 
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(firstOP, null);
+
 
     }
 
@@ -57,6 +62,7 @@ public class MenuController : MonoBehaviour
         PlayPanel.SetActive(false);
         CreditsPanel.SetActive(true);
         OpcionesPanel.SetActive(false);
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(firstCred, null);
 
 
     }
@@ -74,6 +80,7 @@ public class MenuController : MonoBehaviour
         PlayPanel.SetActive(false);
         CreditsPanel.SetActive(false);
         OpcionesPanel.SetActive(false);
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(firstMain, null);
 
 
     }
