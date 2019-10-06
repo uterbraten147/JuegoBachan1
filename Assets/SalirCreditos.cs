@@ -3,20 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SwichBack : MonoBehaviour
+public class SalirCreditos : MonoBehaviour
 {
+    public float timer;
+    public int Escena;
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("Timer");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Button_Back"))
+        
+    }
+
+    IEnumerator Timer()
+    {
+
+        while (true)
         {
-            SceneManager.LoadScene(2);
+            yield return new WaitForSeconds(timer);
+            SceneManager.LoadScene(Escena);
         }
     }
 }
