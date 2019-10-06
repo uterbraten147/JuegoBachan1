@@ -24,7 +24,7 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
 
-        distancia = Vector3.Distance(player.transform.position, transform.position);
+        distancia = Vector3.Distance( new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) , this.transform.position);
 
         if(distancia <= 2) 
         {

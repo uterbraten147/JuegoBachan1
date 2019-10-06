@@ -714,7 +714,7 @@ MonoBehaviour:
   firstMain: {fileID: 1743154490}
   firstPlay: {fileID: 1480287541}
   firstCred: {fileID: 1719283238}
-  firstOP: {fileID: 1098192166}
+  firstOP: {fileID: 0}
 --- !u!4 &233842996
 Transform:
   m_ObjectHideFlags: 0

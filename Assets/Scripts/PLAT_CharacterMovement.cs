@@ -10,10 +10,12 @@ public class PLAT_CharacterMovement : MonoBehaviour
     public float jumpForce = 20;
     public float gravityScale = 1;
     public float jumpDelay = 0.1f;
+    public float waitA =0.5f;
 
     public Transform playerTarget;
     public GameObject attackBox;
 
+    public bool canAttack = true;
     private Camera cam;
     private CharacterController controller;
     private Vector3 moveDirection;
@@ -29,6 +31,7 @@ public class PLAT_CharacterMovement : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        canAttack = true;
         controller = GetComponent<CharacterController>();
         matChanger = GameObject.Find("GameManager");//puede ser otro nombre
         //this.transform.GetChild(0).transform.GetChild(1).GetComponent<Renderer>().material = matChanger.GetComponent<PLAT_Material>().finalMat;
@@ -56,12 +59,15 @@ public class PLAT_CharacterMovement : MonoBehaviour
             timePassed = 0.1f;
         }
 
-        if (Input.GetButtonDown("Button_X"))
+        if (Input.GetButtonDown("Button_X") && canAttack)
         {
             attackBox.SetActive(true);
             if (anim.GetInteger("AttackTurn") == 1)
             {
                 anim.SetInteger("AttackTurn", 0);
+                canAttack = false;
+                StartCoroutine(WaitAttack());
+
             }
             else
             {
@@ -108,5 +114,12 @@ public class PLAT_CharacterMovement : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         attackBox.SetActive(false);
         //print(Time.time);
+    }
+
+    IEnumerator WaitAttack()
+    {
+        yield return new WaitForSeconds(waitA);
+        canAttack = true;
+
     }
 }

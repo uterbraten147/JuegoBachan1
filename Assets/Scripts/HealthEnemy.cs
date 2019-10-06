@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HealthEnemy : MonoBehaviour
 {
-   public static float enemyLife = 100f;
+    public float enemyLife = 100f;
+    private bool hitbool;
     bool daño= false;
     // Start is called before the first frame update
     void Start()
@@ -12,14 +13,30 @@ public class HealthEnemy : MonoBehaviour
         
     }
 
+    
+
     // Update is called once per frame
     void Update()
     {
+
         if (enemyLife <= 0)
         {
             Destroy(this.gameObject);
         }
+
     }
 
-   
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.CompareTag("AttackBox"))
+        {
+            Debug.Log("Entroasies");
+            enemyLife -= 20;
+            
+        }
+    }
+    
+
 }

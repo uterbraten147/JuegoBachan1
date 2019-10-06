@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &5046697945423297749
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276634872349913535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.6, z: 0.3}
+  m_Center: {x: -0.02, y: 0.32378507, z: 0}
+--- !u!114 &8140011020292477881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276634872349913535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1786b2f7f653fe343bf851a033d4c456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  SpeedMove: 2
+  EnemyAnim: {fileID: 6559378414160359126}
 --- !u!1 &8140011020148956073
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,21 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a849456c19dd9f847bcbc31985718106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8140011020292477881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276634872349913535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1786b2f7f653fe343bf851a033d4c456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  SpeedMove: 2
-  EnemyAnim: {fileID: 6559378414160359126}
+  enemyLife: 100
 --- !u!1001 &8140011019631700150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,11 +163,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: spiderman
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: e4d592c5453e02241a7bb2f07fa8dd87,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f6694f590e82f5f41a0f1bc77015e567, type: 2}
     - target: {fileID: -4216859302048453862, guid: e4d592c5453e02241a7bb2f07fa8dd87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -224,6 +233,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.7075
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: e4d592c5453e02241a7bb2f07fa8dd87,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f6694f590e82f5f41a0f1bc77015e567, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d592c5453e02241a7bb2f07fa8dd87, type: 3}
 --- !u!1 &276634872349913535 stripped
