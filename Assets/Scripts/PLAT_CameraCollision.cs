@@ -9,7 +9,7 @@ public class PLAT_CameraCollision : MonoBehaviour
     public float smooth = 10.0f;
     Vector3 dollyDir;
     bool changeCamDolly = false;
-    public Transform aim;
+    //public Transform aim;
     //public Vector3 dollyDirectionAdjusted;
     public float distance;
 
@@ -30,7 +30,7 @@ public class PLAT_CameraCollision : MonoBehaviour
         if (Input.GetAxis("Trigger_Left") > 0.5f)
         {
             distance = 1.0f;
-            aim.transform.position = transform.position + transform.forward * 3;
+            //aim.transform.position = transform.position + transform.forward * 3;
             if (!changeCamDolly)
             {
                 
