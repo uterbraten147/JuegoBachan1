@@ -17,6 +17,8 @@ public class AttackingPlayer : MonoBehaviour
         if (daño)
         {
             HealthEnemy.enemyLife -= 20;
+
+            Debug.Log("vida del enemigo: " + HealthEnemy.enemyLife);
         }
         
     }
