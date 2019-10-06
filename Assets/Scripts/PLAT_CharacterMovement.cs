@@ -12,6 +12,7 @@ public class PLAT_CharacterMovement : MonoBehaviour
     public float jumpDelay = 0.1f;
 
     public Transform playerTarget;
+    public GameObject attackBox;
 
     private Camera cam;
     private CharacterController controller;
@@ -55,6 +56,22 @@ public class PLAT_CharacterMovement : MonoBehaviour
             timePassed = 0.1f;
         }
 
+        if (Input.GetButtonDown("Button_X"))
+        {
+            attackBox.SetActive(true);
+            if (anim.GetInteger("AttackTurn") == 1)
+            {
+                anim.SetInteger("AttackTurn", 0);
+            }
+            else
+            {
+                anim.SetInteger("AttackTurn", 1);
+            }
+            //Debug.Log(anim.GetInteger("AttackTurn"));
+            anim.SetTrigger("AttackTrigger");
+            StartCoroutine(DisableAttackBox());
+        }
+
         if (controller.isGrounded)
         {
             anim.SetBool("FallingBool", false);
@@ -85,5 +102,11 @@ public class PLAT_CharacterMovement : MonoBehaviour
         moveDirection.y = fuerzalto;
     }
 
-
+    IEnumerator DisableAttackBox()
+    {
+        //print(Time.time);
+        yield return new WaitForSeconds(0.8f);
+        attackBox.SetActive(false);
+        //print(Time.time);
+    }
 }
