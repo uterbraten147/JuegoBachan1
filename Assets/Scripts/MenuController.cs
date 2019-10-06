@@ -89,6 +89,10 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    public void Creditos()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
 
 
