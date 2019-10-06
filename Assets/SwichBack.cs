@@ -14,7 +14,7 @@ public class SwichBack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Button_B"))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Button_Back"))
         {
             SceneManager.LoadScene(2);
         }
